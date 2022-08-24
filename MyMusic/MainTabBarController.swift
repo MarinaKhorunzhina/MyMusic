@@ -15,9 +15,8 @@ class MainTabBarController: UITabBarController {
         
         view.backgroundColor = .white
         
-        tabBar.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        tabBar.tintColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
         tabBar.backgroundColor = .white
-        
         
 
         viewControllers = [
