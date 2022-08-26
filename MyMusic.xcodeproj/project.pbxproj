@@ -23,7 +23,8 @@
 		9C48D17128B9328C00828AEB /* SearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48D16A28B9328C00828AEB /* SearchModels.swift */; };
 		9C48D17228B9328C00828AEB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48D16B28B9328C00828AEB /* SearchViewController.swift */; };
 		9C48D17328B9328C00828AEB /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48D16C28B9328C00828AEB /* SearchInteractor.swift */; };
-		9C48D17428B9328C00828AEB /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C48D16D28B9328C00828AEB /* SearchViewController.xib */; };
+		9C48D17628B937B000828AEB /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C48D17528B937B000828AEB /* SearchViewController.storyboard */; };
+		9C48D17828B93DA600828AEB /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48D17728B93DA600828AEB /* UIViewController + Storyboard.swift */; };
 		F7543855302BB4DCA9624E41 /* Pods_MyMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5086EBDD6F388C69DF3D5D3D /* Pods_MyMusic.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +49,8 @@
 		9C48D16A28B9328C00828AEB /* SearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModels.swift; sourceTree = "<group>"; };
 		9C48D16B28B9328C00828AEB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9C48D16C28B9328C00828AEB /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
-		9C48D16D28B9328C00828AEB /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		9C48D17528B937B000828AEB /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
+		9C48D17728B93DA600828AEB /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
 		F5F34E317EF83CFEA6A6ADCF /* Pods-MyMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusic.release.xcconfig"; path = "Target Support Files/Pods-MyMusic/Pods-MyMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,15 +106,24 @@
 		9C48D16628B931CE00828AEB /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				9C48D16D28B9328C00828AEB /* SearchViewController.xib */,
+				9C48D17528B937B000828AEB /* SearchViewController.storyboard */,
 				9C48D16B28B9328C00828AEB /* SearchViewController.swift */,
 				9C48D16C28B9328C00828AEB /* SearchInteractor.swift */,
 				9C48D16728B9328C00828AEB /* SearchPresenter.swift */,
 				9C48D16A28B9328C00828AEB /* SearchModels.swift */,
 				9C48D16828B9328C00828AEB /* SearchWorker.swift */,
 				9C48D16928B9328C00828AEB /* SearchRouter.swift */,
+				9C48D17928B93DAC00828AEB /* Helpers */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		9C48D17928B93DAC00828AEB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9C48D17728B93DA600828AEB /* UIViewController + Storyboard.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CEB82D5288270CE805887611 /* Pods */ = {
@@ -194,7 +205,7 @@
 			files = (
 				9C48D15728B67D6E00828AEB /* LaunchScreen.storyboard in Resources */,
 				9C48D15428B67D6E00828AEB /* Assets.xcassets in Resources */,
-				9C48D17428B9328C00828AEB /* SearchViewController.xib in Resources */,
+				9C48D17628B937B000828AEB /* SearchViewController.storyboard in Resources */,
 				9C48D15228B67D6D00828AEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C48D16128B67FED00828AEB /* SearchMusicViewController.swift in Sources */,
+				9C48D17828B93DA600828AEB /* UIViewController + Storyboard.swift in Sources */,
 				9C48D14F28B67D6D00828AEB /* ViewController.swift in Sources */,
 				9C48D16328B7DBA800828AEB /* SearchResponse.swift in Sources */,
 				9C48D17328B9328C00828AEB /* SearchInteractor.swift in Sources */,
