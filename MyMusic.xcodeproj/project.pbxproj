@@ -16,6 +16,7 @@
 		9C48D15F28B67F3F00828AEB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48D15E28B67F3F00828AEB /* MainTabBarController.swift */; };
 		9C48D16128B67FED00828AEB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48D16028B67FED00828AEB /* SearchViewController.swift */; };
 		9C48D16328B7DBA800828AEB /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48D16228B7DBA800828AEB /* SearchResponse.swift */; };
+		9C48D16528B92BD600828AEB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48D16428B92BD600828AEB /* NetworkService.swift */; };
 		F7543855302BB4DCA9624E41 /* Pods_MyMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5086EBDD6F388C69DF3D5D3D /* Pods_MyMusic.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		9C48D15E28B67F3F00828AEB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9C48D16028B67FED00828AEB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9C48D16228B7DBA800828AEB /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		9C48D16428B92BD600828AEB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F5F34E317EF83CFEA6A6ADCF /* Pods-MyMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusic.release.xcconfig"; path = "Target Support Files/Pods-MyMusic/Pods-MyMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 				9C48D14E28B67D6D00828AEB /* ViewController.swift */,
 				9C48D15E28B67F3F00828AEB /* MainTabBarController.swift */,
 				9C48D16028B67FED00828AEB /* SearchViewController.swift */,
+				9C48D16428B92BD600828AEB /* NetworkService.swift */,
 				9C48D16228B7DBA800828AEB /* SearchResponse.swift */,
 				9C48D15028B67D6D00828AEB /* Main.storyboard */,
 				9C48D15328B67D6E00828AEB /* Assets.xcassets */,
@@ -221,6 +224,7 @@
 				9C48D14B28B67D6D00828AEB /* AppDelegate.swift in Sources */,
 				9C48D15F28B67F3F00828AEB /* MainTabBarController.swift in Sources */,
 				9C48D14D28B67D6D00828AEB /* SceneDelegate.swift in Sources */,
+				9C48D16528B92BD600828AEB /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
