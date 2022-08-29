@@ -25,6 +25,8 @@
 		9C48D17328B9328C00828AEB /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48D16C28B9328C00828AEB /* SearchInteractor.swift */; };
 		9C48D17628B937B000828AEB /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C48D17528B937B000828AEB /* SearchViewController.storyboard */; };
 		9C48D17828B93DA600828AEB /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48D17728B93DA600828AEB /* UIViewController + Storyboard.swift */; };
+		9C48D17E28BD29E700828AEB /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C48D17D28BD29E700828AEB /* TrackCell.xib */; };
+		9C48D18028BD2A3F00828AEB /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48D17F28BD2A3F00828AEB /* TrackCell.swift */; };
 		F7543855302BB4DCA9624E41 /* Pods_MyMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5086EBDD6F388C69DF3D5D3D /* Pods_MyMusic.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		9C48D16C28B9328C00828AEB /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		9C48D17528B937B000828AEB /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		9C48D17728B93DA600828AEB /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
+		9C48D17D28BD29E700828AEB /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
+		9C48D17F28BD2A3F00828AEB /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		F5F34E317EF83CFEA6A6ADCF /* Pods-MyMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusic.release.xcconfig"; path = "Target Support Files/Pods-MyMusic/Pods-MyMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +110,7 @@
 		9C48D16628B931CE00828AEB /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				9C48D17A28BD299800828AEB /* Cell */,
 				9C48D17528B937B000828AEB /* SearchViewController.storyboard */,
 				9C48D16B28B9328C00828AEB /* SearchViewController.swift */,
 				9C48D16C28B9328C00828AEB /* SearchInteractor.swift */,
@@ -124,6 +129,15 @@
 				9C48D17728B93DA600828AEB /* UIViewController + Storyboard.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9C48D17A28BD299800828AEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9C48D17D28BD29E700828AEB /* TrackCell.xib */,
+				9C48D17F28BD2A3F00828AEB /* TrackCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CEB82D5288270CE805887611 /* Pods */ = {
@@ -204,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C48D15728B67D6E00828AEB /* LaunchScreen.storyboard in Resources */,
+				9C48D17E28BD29E700828AEB /* TrackCell.xib in Resources */,
 				9C48D15428B67D6E00828AEB /* Assets.xcassets in Resources */,
 				9C48D17628B937B000828AEB /* SearchViewController.storyboard in Resources */,
 				9C48D15228B67D6D00828AEB /* Main.storyboard in Resources */,
@@ -264,6 +279,7 @@
 				9C48D14F28B67D6D00828AEB /* ViewController.swift in Sources */,
 				9C48D16328B7DBA800828AEB /* SearchResponse.swift in Sources */,
 				9C48D17328B9328C00828AEB /* SearchInteractor.swift in Sources */,
+				9C48D18028BD2A3F00828AEB /* TrackCell.swift in Sources */,
 				9C48D14B28B67D6D00828AEB /* AppDelegate.swift in Sources */,
 				9C48D15F28B67F3F00828AEB /* MainTabBarController.swift in Sources */,
 				9C48D16F28B9328C00828AEB /* SearchWorker.swift in Sources */,
