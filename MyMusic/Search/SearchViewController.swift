@@ -47,6 +47,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
       
       setupTableView()
       setupSearchBar()
+      searchBar(searchController.searchBar, textDidChange: "Poker")
   }
   
     private func setupSearchBar() {
