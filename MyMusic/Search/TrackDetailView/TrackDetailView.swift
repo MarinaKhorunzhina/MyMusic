@@ -9,6 +9,10 @@ import UIKit
 import SDWebImage
 import AVKit
 
+protocol TrackMovingDelegate: AnyObject {
+    func moveBackForPreviousTrack() -> SearchViewModel.Cell?
+    func moveForwardForPreviousTrack() -> SearchViewModel.Cell?
+}
 
 class TrackDetailView: UIView {
     
@@ -22,6 +26,8 @@ class TrackDetailView: UIView {
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var volumeSlider: UISlider!
     
+    weak var delegate: TrackMovingDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -29,11 +35,11 @@ class TrackDetailView: UIView {
         trackImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
         
         trackImageView.layer.cornerRadius = 5
-        trackImageView.backgroundColor = .yellow
+        trackImageView.backgroundColor = .white
     }
     
     let player: AVPlayer = {
-       let avPlayer = AVPlayer()
+        let avPlayer = AVPlayer()
         //отменяет задержку в начале проигрывания
         avPlayer.automaticallyWaitsToMinimizeStalling = false
         return avPlayer
@@ -46,7 +52,7 @@ class TrackDetailView: UIView {
         playTrack(previewUrl: viewModel.previewUrl)
         observeOlayerCurrentTime()
         
-     //   playTrack(previewUrl: viewModel.previewUrl)
+        //   playTrack(previewUrl: viewModel.previewUrl)
         let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
         guard let url = URL(string: string600 ?? "") else { return }
         trackImageView.sd_setImage(with: url, completed: nil)
@@ -108,7 +114,7 @@ class TrackDetailView: UIView {
             self.trackImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
         }, completion: nil)
     }
-   
+    
     // MARK: - @IBActions
     
     @IBAction func handleCurrentTimeSlider(_ sender: Any) {
@@ -119,8 +125,8 @@ class TrackDetailView: UIView {
         let seekTime = CMTimeMakeWithSeconds(seekTimeUnSeconds, preferredTimescale: 1)
         player.seek(to: seekTime)
         self.playPause ()
-       
-    
+        
+        
     }
     @IBAction func handleVolumeSlider(_ sender: Any) {
         player.volume = volumeSlider.value
@@ -132,23 +138,30 @@ class TrackDetailView: UIView {
     }
     
     @IBAction func previousTrack(_ sender: Any) {
+        let cellViewModel = delegate?.moveBackForPreviousTrack()
+        guard let cellInfo = cellViewModel else { return }
+        self.set(viewModel: cellInfo)
     }
     
     @IBAction func nextTrack(_ sender: Any) {
+        let cellViewModel = delegate?.moveForwardForPreviousTrack()
+        guard let cellInfo = cellViewModel else { return }
+        self.set(viewModel: cellInfo)
     }
     
     @IBAction func playPauseAction(_ sender: Any) {
-        self.playPause()
+        playPause()
     }
-    func playPause () {
-    if player.timeControlStatus == .paused {
-        player.play()
-        playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-        enlargeTrackImageView()
-    } else {
-        player.pause()
-        playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-        reduceTrackImageView()
+    
+    private func playPause () {
+        if player.timeControlStatus == .paused {
+            player.play()
+            playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            enlargeTrackImageView()
+        } else {
+            player.pause()
+            playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            reduceTrackImageView()
+        }
     }
-}
 }
