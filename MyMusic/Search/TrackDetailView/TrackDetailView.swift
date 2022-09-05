@@ -27,6 +27,7 @@ class TrackDetailView: UIView {
     @IBOutlet weak var volumeSlider: UISlider!
     
     weak var delegate: TrackMovingDelegate?
+    weak var tabBarDelegate: MainTabBarControllerDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -133,8 +134,9 @@ class TrackDetailView: UIView {
     }
     
     @IBAction func dragDownButtonTapped(_ sender: Any) {
+        self.tabBarDelegate?.minimizeTrackDetailController()
         // сворачивает TrackDetailView
-        self.removeFromSuperview()
+       // self.removeFromSuperview()
     }
     
     @IBAction func previousTrack(_ sender: Any) {

@@ -31,6 +31,7 @@
 		9CEF594028BFDE0000F55A09 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF593F28BFDE0000F55A09 /* TrackDetailView.swift */; };
 		9CEF594228BFDE4300F55A09 /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEF594128BFDE4300F55A09 /* TrackDetailView.xib */; };
 		9CEF594428C2767900F55A09 /* CM Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF594328C2767900F55A09 /* CM Time.swift */; };
+		9CEF594628C67EF700F55A09 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF594528C67EF700F55A09 /* Nib.swift */; };
 		F7543855302BB4DCA9624E41 /* Pods_MyMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5086EBDD6F388C69DF3D5D3D /* Pods_MyMusic.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		9CEF593F28BFDE0000F55A09 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		9CEF594128BFDE4300F55A09 /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
 		9CEF594328C2767900F55A09 /* CM Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CM Time.swift"; sourceTree = "<group>"; };
+		9CEF594528C67EF700F55A09 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		F5F34E317EF83CFEA6A6ADCF /* Pods-MyMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusic.release.xcconfig"; path = "Target Support Files/Pods-MyMusic/Pods-MyMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,10 +104,10 @@
 				9C48D14A28B67D6D00828AEB /* AppDelegate.swift */,
 				9C48D14C28B67D6D00828AEB /* SceneDelegate.swift */,
 				9C48D14E28B67D6D00828AEB /* ViewController.swift */,
-				9C48D15E28B67F3F00828AEB /* MainTabBarController.swift */,
 				9C48D16028B67FED00828AEB /* SearchMusicViewController.swift */,
 				9C48D16428B92BD600828AEB /* NetworkService.swift */,
 				9C48D16228B7DBA800828AEB /* SearchResponse.swift */,
+				9C48D15E28B67F3F00828AEB /* MainTabBarController.swift */,
 				9C48D16628B931CE00828AEB /* Search */,
 				9C48D15028B67D6D00828AEB /* Main.storyboard */,
 				9C48D15328B67D6E00828AEB /* Assets.xcassets */,
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				9C48D17728B93DA600828AEB /* UIViewController + Storyboard.swift */,
+				9CEF594528C67EF700F55A09 /* Nib.swift */,
 				9CEF594328C2767900F55A09 /* CM Time.swift */,
 			);
 			path = Helpers;
@@ -311,6 +314,7 @@
 				9C48D17328B9328C00828AEB /* SearchInteractor.swift in Sources */,
 				9CEF593D28BE788100F55A09 /* FooterView.swift in Sources */,
 				9C48D18028BD2A3F00828AEB /* TrackCell.swift in Sources */,
+				9CEF594628C67EF700F55A09 /* Nib.swift in Sources */,
 				9C48D14B28B67D6D00828AEB /* AppDelegate.swift in Sources */,
 				9C48D15F28B67F3F00828AEB /* MainTabBarController.swift in Sources */,
 				9C48D16F28B9328C00828AEB /* SearchWorker.swift in Sources */,
