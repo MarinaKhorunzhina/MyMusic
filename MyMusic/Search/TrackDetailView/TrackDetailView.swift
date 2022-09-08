@@ -64,14 +64,14 @@ class TrackDetailView: UIView {
         observeOlayerCurrentTime()
         playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
         miniPlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-    
+        
         //   playTrack(previewUrl: viewModel.previewUrl)
         let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
         guard let url = URL(string: string600 ?? "") else { return }
         miniTrackImageView.sd_setImage(with: url, completed: nil)
         trackImageView.sd_setImage(with: url, completed: nil)
     }
-   
+    
     private func playTrack(previewUrl: String?) {
         print("Пытаюсь включить трек по ссылке: \(previewUrl ?? "Отсутствует")")
         
@@ -81,10 +81,12 @@ class TrackDetailView: UIView {
         player.play()
     }
     // MARK: - Maximizing and minimizing gestures
+    
     private func setupGestures() {
         
         miniTrackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapMaximized)))
         miniTrackView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))
+        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleDismissalPan)))
     }
     
     @objc private func handleTapMaximized() {
@@ -118,7 +120,12 @@ class TrackDetailView: UIView {
         let translation = gesture.translation(in: self.superview)
         let velocity = gesture.velocity(in: self.superview)
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 1,
+                       options: .curveEaseOut,
+                       animations: {
             self.transform = .identity
             if translation.y < -200 || velocity.y < -500 {
                 self.tabBarDelegate?.maximizeTrackDetailController(viewModel: nil)
@@ -127,6 +134,28 @@ class TrackDetailView: UIView {
                 self.maxizedStackView.alpha = 0
             }
         }, completion: nil)
+    }
+    @objc private func handleDismissalPan(gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+        case .changed:
+            let translation = gesture.translation(in: self.superview)
+            maxizedStackView.transform = CGAffineTransform(translationX: 0, y: translation.y)
+        case .ended:
+            let translation = gesture.translation(in: self.superview)
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           usingSpringWithDamping: 0.7,
+                           initialSpringVelocity: 1,
+                           options: .curveEaseInOut,
+                           animations: {
+                self.maxizedStackView.transform = .identity
+                if translation.y > 50 {
+                    self.tabBarDelegate?.minimizeTrackDetailController()
+                }
+            }, completion: nil)
+        @unknown default:
+            print("unknown default")
+        }
     }
     
     // MARK: - Time setup
@@ -139,7 +168,6 @@ class TrackDetailView: UIView {
             self?.enlargeTrackImageView()
         }
     }
-    
     
     // время трека
     private func observeOlayerCurrentTime() {
@@ -198,7 +226,7 @@ class TrackDetailView: UIView {
     @IBAction func dragDownButtonTapped(_ sender: Any) {
         self.tabBarDelegate?.minimizeTrackDetailController()
         // сворачивает TrackDetailView
-       // self.removeFromSuperview()
+        // self.removeFromSuperview()
     }
     
     @IBAction func previousTrack(_ sender: Any) {
