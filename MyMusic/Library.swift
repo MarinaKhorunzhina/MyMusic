@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct Library: View {
+    
+    var tracks = UserDefaults.standard.savedTracks()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -17,7 +21,7 @@ struct Library: View {
                             print("12345")
                         }, label: {
                             Image(systemName: "play.fill")
-                                .frame(width: geometry.size.width / 2 - 10, height: 50)
+                                .frame(width: 180, height: 50)
                                 .accentColor(Color.red)
                                 .background(Color.gray)
                                 .cornerRadius(10)
@@ -26,7 +30,7 @@ struct Library: View {
                             print("54321")
                         }, label: {
                             Image(systemName: "arrow.2.circlepath")
-                                .frame(width: geometry.size.width / 2 - 10, height: 50)
+                                .frame(width: 180, height: 50)
                                 .accentColor(Color.init(#colorLiteral(red: 0.9921568627, green: 0.1764705882, blue: 0.3333333333, alpha: 1)))
                                 .background(Color.init(#colorLiteral(red: 0.9531342387, green: 0.9490900636, blue: 0.9562709928, alpha: 1)))
                                 .cornerRadius(10)
@@ -35,10 +39,9 @@ struct Library: View {
                 }.padding().frame(height: 50)
                 Divider().padding(.leading).padding(.trailing).padding(.top)
                 
-                List {
-                    LibraryCell()
-                   // Text("Second")
-                  //  Text("Third")
+                List(tracks) { track in
+                    LibraryCell(cell: track)
+                   
                 }
             }
                 .navigationBarTitle("Library")
@@ -49,12 +52,14 @@ struct Library: View {
 }
 
 struct LibraryCell: View {
+    var cell: SearchViewModel.Cell
+    
     var body: some View {
         HStack {
-            Image("Image").resizable().frame(width: 60, height: 60).cornerRadius(2)
-            VStack {
-                Text("Track Name")
-                Text("Artist Name")
+            URLImage(URL(string: cell.iconUrlString ?? "")!).resizable().frame(width: 60, height: 60).cornerRadius(2)
+            VStack(alignment: .leading) {
+                Text("\(cell.trackName)")
+                Text("\(cell.artistName)")
             }
         }
         

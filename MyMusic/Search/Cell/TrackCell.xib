@@ -42,15 +42,6 @@
                             <action selector="addTrackAction:" destination="iN8-zN-8hB" eventType="touchUpInside" id="pwf-ro-eEd"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdc-Ue-dja">
-                        <rect key="frame" x="317" y="12" width="75" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="looc"/>
-                        <connections>
-                            <action selector="showInfoAction:" destination="iN8-zN-8hB" eventType="touchUpInside" id="87D-DH-3aL"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="trackName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MZ-f4-dYe">
                         <rect key="frame" x="89" y="9" width="250" height="21"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -61,6 +52,7 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="addTrackOutlet" destination="ED7-sU-zaK" id="hSQ-Lv-OZF"/>
                 <outlet property="artistNameLabel" destination="5RF-XF-EWP" id="s70-4j-uBL"/>
                 <outlet property="collectionNameLabel" destination="nup-KM-Gqh" id="8hy-LM-H9i"/>
                 <outlet property="trackImageView" destination="uIU-fa-IvI" id="vuj-Zc-pfg"/>
