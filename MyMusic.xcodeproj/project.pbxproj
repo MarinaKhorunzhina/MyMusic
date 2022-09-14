@@ -34,8 +34,8 @@
 		9CEF594628C67EF700F55A09 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF594528C67EF700F55A09 /* Nib.swift */; };
 		9CEF594828CDFF3B00F55A09 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF594728CDFF3B00F55A09 /* Library.swift */; };
 		9CEF594A28CF9DF900F55A09 /* UserDafaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF594928CF9DF900F55A09 /* UserDafaults.swift */; };
-		9CEF594D28CFA70600F55A09 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9CEF594C28CFA70600F55A09 /* URLImage */; };
-		9CEF594F28CFA70600F55A09 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 9CEF594E28CFA70600F55A09 /* URLImageStore */; };
+		9CEF595228D23B3400F55A09 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9CEF595128D23B3400F55A09 /* URLImage */; };
+		9CEF595428D23B3400F55A09 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 9CEF595328D23B3400F55A09 /* URLImageStore */; };
 		F7543855302BB4DCA9624E41 /* Pods_MyMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5086EBDD6F388C69DF3D5D3D /* Pods_MyMusic.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,8 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CEF594D28CFA70600F55A09 /* URLImage in Frameworks */,
-				9CEF594F28CFA70600F55A09 /* URLImageStore in Frameworks */,
+				9CEF595228D23B3400F55A09 /* URLImage in Frameworks */,
+				9CEF595428D23B3400F55A09 /* URLImageStore in Frameworks */,
 				F7543855302BB4DCA9624E41 /* Pods_MyMusic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,8 +217,8 @@
 			);
 			name = MyMusic;
 			packageProductDependencies = (
-				9CEF594C28CFA70600F55A09 /* URLImage */,
-				9CEF594E28CFA70600F55A09 /* URLImageStore */,
+				9CEF595128D23B3400F55A09 /* URLImage */,
+				9CEF595328D23B3400F55A09 /* URLImageStore */,
 			);
 			productName = MyMusic;
 			productReference = 9C48D14728B67D6D00828AEB /* MyMusic.app */;
@@ -249,7 +249,7 @@
 			);
 			mainGroup = 9C48D13E28B67D6D00828AEB;
 			packageReferences = (
-				9CEF594B28CFA70600F55A09 /* XCRemoteSwiftPackageReference "url-image" */,
+				9CEF595028D23B3400F55A09 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = 9C48D14828B67D6D00828AEB /* Products */;
 			projectDirPath = "";
@@ -565,25 +565,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9CEF594B28CFA70600F55A09 /* XCRemoteSwiftPackageReference "url-image" */ = {
+		9CEF595028D23B3400F55A09 /* XCRemoteSwiftPackageReference "url-image" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9CEF594C28CFA70600F55A09 /* URLImage */ = {
+		9CEF595128D23B3400F55A09 /* URLImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CEF594B28CFA70600F55A09 /* XCRemoteSwiftPackageReference "url-image" */;
+			package = 9CEF595028D23B3400F55A09 /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
 		};
-		9CEF594E28CFA70600F55A09 /* URLImageStore */ = {
+		9CEF595328D23B3400F55A09 /* URLImageStore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CEF594B28CFA70600F55A09 /* XCRemoteSwiftPackageReference "url-image" */;
+			package = 9CEF595028D23B3400F55A09 /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImageStore;
 		};
 /* End XCSwiftPackageProductDependency section */
