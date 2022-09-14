@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import URLImageStore
 import URLImage
 
 struct Library: View {
@@ -27,8 +28,8 @@ struct Library: View {
                         }, label: {
                             Image(systemName: "play.fill")
                                 .frame(width: 180, height: 40)
-                                .accentColor(Color.red)
-                                .background(Color.gray)
+                                .accentColor(Color.init(#colorLiteral(red: 1, green: 0.1857388616, blue: 0.5733950138, alpha: 1)))
+                                .background(Color.init(#colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1)))
                                 .cornerRadius(10)
                         })
                         Button(action: {
@@ -36,12 +37,12 @@ struct Library: View {
                         }, label: {
                             Image(systemName: "arrow.2.circlepath")
                                 .frame(width: 180, height: 40)
-                                .accentColor(Color.red)
-                                .background(Color.gray)
+                                .accentColor(Color.init(#colorLiteral(red: 1, green: 0.1857388616, blue: 0.5733950138, alpha: 1)))
+                                .background(Color.init(#colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1)))
                                 .cornerRadius(10)
                         })
                     }
-                }.padding().frame(height: 50)
+                }.padding().frame(height: 55)
                 Divider().padding(.leading).padding(.trailing)
                 
                 List {
@@ -98,7 +99,10 @@ struct LibraryCell: View {
     
     var body: some View {
         HStack {
-           // URLImage(URL(string: cell.iconUrlString ?? "")!).resizable().frame(width: 60, height: 60).cornerRadius(2)
+           
+            URLImage(URL(string: cell.iconUrlString ?? "")!) { image in
+            image
+                .resizable().frame(width: 70, height: 70).cornerRadius(2)}
             VStack(alignment: .leading) {
                 Text("\(cell.trackName)")
                 Text("\(cell.artistName)")
